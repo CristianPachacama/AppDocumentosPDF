@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{eletter2}
+
+<<default, echo=F>>=
+if(input$codigo=="") {
+  codigo = "2018-IIE-PUCE-00X"
+}else{
+  codigo = input$codigo
+}
+#codigo
+################
+if(input$asunto=="") {
+  asunto = "Solicitud"
+}else{
+  asunto = input$asunto
+}
+#asunto
+################
+if(input$destinoNomb=="") {
+  destinoNomb = "Destinatario"
+}else{
+  destinoNomb = input$destinoNomb
+}
+#destinoNomb
+################
+if(input$destinoCarg=="") {
+  destinoCarg = "Cargo"
+}else{
+  destinoCarg = input$destinoCarg
+}
+#destinoCarg
+################
+if(input$destinoInstit=="") {
+  destinoInstit = "Institución"
+}else{
+  destinoInstit = input$destinoInstit
+}
+#destinoInstit
+################
+if(input$remitNomb=="") {
+  remitNomb = "Remitente"
+}else{
+  remitNomb = input$remitNomb
+}
+#remitNomb
+################
+if(input$remitCarg=="") {
+  remitCarg = "Cargo del Remitente"
+}else{
+  remitCarg = input$remitCarg
+}
+#remitCarg
+################
+if(input$contenido=="") {
+  contenido = "Contenido"
+}else{
+  contenido = input$contenido
+}
+@
+
+\signature{
+
+\Sexpr{remitNomb} \\
+\Sexpr{remitCarg}\\
+Instituto de Investigaciones Económicas
+Pontificia Universidad Católica del Ecuador
+
+}
+\date{\today}
+\begin{document}
+
+
+
+
+ \begin{letter}{
+ 
+ Sr. \\
+ \Sexpr{destinoNomb} \\
+ \Sexpr{destinoCarg}  \\
+ \Sexpr{destinoInstit}  \\
+ }
+
+
+ \opening{Estimado,}
+
+ \medskip
+ 
+ \Sexpr{contenido}
+
+
+ \closing{Por la favorable atención a la presente reitero mi agradecimiento,}
+
+ \end{letter}
+
+
+
+\end{document}
